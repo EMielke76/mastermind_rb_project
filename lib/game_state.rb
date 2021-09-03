@@ -48,16 +48,33 @@ class GameState
 
   end
 
-game1 = GameState.new
-game1.ask_for_guess
+  # game1 = GameState.new
+  # game1.ask_for_guess
 
 
-# #given @guess, call for appropriate method for response
-  def respond_to_guess
+  # #given @guess, call for appropriate method for response
+  def correct_elements_calc
 
+    count = 0
+    available_letters = ['r', 'g', 'b', 'y']
 
-    # puts "respond to testing"
+    availble_letters.each do |letter|
+      if @secret_code.count(letter) == @guess.count(letter)
+        count = count + @secret_code.count(letter)
+      end
+    end
+    puts "You've guessed #{count} correct colors!"
+  end
 
+  def correct_index_pos
+
+    count = 0
+
+    [0, 1, 2, 3].each do |index|
+      if @secret_code[index] == @guess[index]
+        count += 1
+      end
+    end
   end
 
 # #quit the game if guess == 'q' or 'quit'
@@ -82,7 +99,7 @@ game1.ask_for_guess
 #   end
 #
 # #tell the user how many correct letters in how many correct locations and
-# #call ask_for_guess
+ #
 #   def valid_input
 #
 #   end
