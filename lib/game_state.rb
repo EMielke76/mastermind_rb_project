@@ -44,15 +44,41 @@ class GameState
         @guess = guess_string.split("")
       end
 
-      puts "your guess is #{@guess}"
 
   end
 
   # game1 = GameState.new
   # game1.ask_for_guess
 
+  # #display appropriate message and make them try again for invalid input
+  # #if @guess > 4 or @guess < 4 or @guess contains illegitimate char, display appropriate message
+  def invalid_input
 
-  # #given @guess, call for appropriate method for response
+    if (@guess.length != 4) or ((secret_code - available_letters).empty? == false)
+      puts "Invalid input! Try again!"
+      return false
+    else
+      return true
+    end
+
+  end
+
+  #RUNNER FILE: if invalid_input returns false, go back to ask_for_guess.
+  #RUNNER FILE: if invalid_input returns true, if guess is not correct, call correct_elements_calc and correct_index_pos
+  #RUNNER FILE: then print out "#{@guess} has #{game1.correct_elements_calc} of the correct elements
+  #RUNNER FILE: with #{game1.correct_index_pos} in the correct positions."
+  #RUNNER FILE: write a method count_turn to count turns, then print "You've taken #{game1.count_turn} guess(es)."
+
+  # #if @guess == secret_code, end the game by calling the EndGame class??
+  #   def correct_guess
+  #
+  #   end
+  #
+  # #tell the user how many correct letters in how many correct locations and
+   #
+
+
+
   def correct_elements_calc
 
     count = 0
@@ -77,31 +103,6 @@ class GameState
     end
   end
 
-# #quit the game if guess == 'q' or 'quit'
-#   def quit
-#
-#   end
-#
-# #display the secret code if @guess == ‘c’ or ‘cheat’
-#   def cheat
-#
-#   end
-#
-# #display appropriate message and make them try again for invalid input
-# #if @guess > 4 or @guess < 4 or @guess contains illegitimate char, display appropriate message
-#   def invalid_input
-#
-#   end
-#
-# #if @guess == secret_code, end the game by calling the EndGame class??
-#   def correct_guess
-#
-#   end
-#
-# #tell the user how many correct letters in how many correct locations and
- #
-#   def valid_input
-#
-#   end
+
 
 end

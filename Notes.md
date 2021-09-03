@@ -1,8 +1,11 @@
 A place for us to store notes, either about the game or to one another
 
 <<<<<<< HEAD
-just schedule something with Cydnee for this afternoon?
+
 =======
+correct_elements_calc, puts needs to come out and return a number
+correct_index_pos needs to return a number
+
 
 Eric's Hash code
 require './lib/run_this.rb'
